@@ -233,7 +233,7 @@ The values that you receive will look like:
 </script>
 ```
 
-### Listen to `change` event
+### Listen to `theme-change` event
 ```JavaScript
 <script type="module">
   const picker = document.querySelector('h5p-theme-picker');
