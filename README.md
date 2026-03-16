@@ -241,7 +241,7 @@ The values that you receive will look like:
    * Or, if you constructed it yourself, e.g.
    * const picker = new H5PThemePicker({});
    */
-  picker.addEventListener('change', (event) => {
+  picker.addEventListener('theme-change', (event) => {
     console.log(event.detail);
   });
 </script>
