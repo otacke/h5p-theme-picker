@@ -476,14 +476,6 @@ export default class ThemePicker extends HTMLElement {
    * Lifecycle method to render the component's DOM structure.
    */
   render() {
-    // if (!this.querySelector(':scope > link[data-theme-picker="main"]')) {
-    //   const link = document.createElement('link');
-    //   link.dataset.themePicker = 'main';
-    //   link.setAttribute('rel', 'stylesheet');
-    //   link.setAttribute('href', new URL('./h5p-theme-picker.css?url', import.meta.url).href);
-    //   this.append(link);
-    // }
-
     if (!this.contains(this.dom)) {
       this.append(this.dom);
     }
