@@ -256,7 +256,7 @@ H5P core as of version 1.28 will put a default set of custom CSS properties for 
 The simplest way would be to pass the colors as part of the `H5PIntegration` object that you pass to H5P anyway. Note that the `--h5p-theme-` prefix would need to be removed for `H5PIntegration` and `useCustomVariables` would need to be set to `true` or `false`. Unfortunately, H5P.com runs a custom version of H5P's core, and the openly available version does not support passing the colors (or the four base colors and the `useCustomVariables` flag) via H5PIntegration.
 
 An alternative way to achieve the same is to load an extra CSS file inside (after the other H5P CSS files). Note that this CSS needs to be applied inside H5P's iframe context. If you just load it in your page, that will not have an effect (except for the few H5P content types that do not use an iframe). The file needs to contain the key/value pairs of the colors that you received from the picker, e.g.
-```
+```css
 :root {
   --h5p-theme-alternative-base: #f3edff;
   --h5p-theme-alternative-dark: #e8d9ff;
