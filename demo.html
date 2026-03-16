@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="H5P Theme picker demo site" />
+  <title>H5P Theme Picker demo</title>
+  <script type="module" src="dist/index.js" defer></script>
+</head>
+<body>
+  <h5p-theme-picker
+    theme-name="lavender"
+    density="medium"
+  >
+  </h5p-theme-picker>
+  <script>
+    const picker = document.querySelector('h5p-theme-picker');
+    picker.addEventListener('theme-change', (event) => {
+      console.log(event.detail);
+    });
+  </script>
+</body>
+</html>

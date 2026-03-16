@@ -1,0 +1,65 @@
+:host {
+  display: block;
+}
+
+.h5p-theme-picker {
+  --h5p-theme-spacing-xl-primary-small: calc(var(--h5p-theme-spacing-xl-primary-medium) * 0.8);
+  --h5p-theme-spacing-primary-small: calc(var(--h5p-theme-spacing-primary-medium) * 0.8);
+  --h5p-theme-spacing-secondary-small: calc(var(--h5p-theme-spacing-secondary-medium) * 0.8);
+  --h5p-theme-spacing-third-small: calc(var(--h5p-theme-spacing-third-medium) * 0.8);
+  --h5p-theme-spacing-fourth-small: calc(var(--h5p-theme-spacing-fourth-medium) * 0.8);
+  --h5p-theme-spacing-fifth-small: calc(var(--h5p-theme-spacing-fifth-medium) * 0.8);
+  --h5p-theme-font-size-xxl-small: calc(var(--h5p-theme-font-size-xxl-medium) * 1);
+  --h5p-theme-font-size-xl-small: calc(var(--h5p-theme-font-size-xl-medium) * 1);
+  --h5p-theme-font-size-l-small: calc(var(--h5p-theme-font-size-l-medium) * 1);
+  --h5p-theme-font-size-m-small: calc(var(--h5p-theme-font-size-m-medium) * 1);
+  --h5p-theme-font-size-s-small: calc(var(--h5p-theme-font-size-s-medium) * 1);
+  --h5p-theme-spacing-xl-primary-medium: calc(var(--h5p-theme-spacing-xl-primary-large) * 0.8);
+  --h5p-theme-spacing-primary-medium: calc(var(--h5p-theme-spacing-primary-large) * 0.8);
+  --h5p-theme-spacing-secondary-medium: calc(var(--h5p-theme-spacing-secondary-large) * 0.8);
+  --h5p-theme-spacing-third-medium: calc(var(--h5p-theme-spacing-third-large) * 0.8);
+  --h5p-theme-spacing-fourth-medium: calc(var(--h5p-theme-spacing-fourth-large) * 0.8);
+  --h5p-theme-spacing-fifth-medium: calc(var(--h5p-theme-spacing-fifth-large) * 0.8);
+  --h5p-theme-font-size-xxl-medium: calc(var(--h5p-theme-font-size-xxl-large) * 0.9);
+  --h5p-theme-font-size-xl-medium: calc(var(--h5p-theme-font-size-xl-large) * 0.9);
+  --h5p-theme-font-size-l-medium: calc(var(--h5p-theme-font-size-l-large) * 0.9);
+  --h5p-theme-font-size-m-medium: calc(var(--h5p-theme-font-size-m-large) * 0.9);
+  --h5p-theme-font-size-s-medium: calc(var(--h5p-theme-font-size-s-large) * 0.9);
+  --h5p-theme-spacing-xl-primary-large: 3rem;
+  --h5p-theme-spacing-primary-large: 2rem;
+  --h5p-theme-spacing-secondary-large: 1.5rem;
+  --h5p-theme-spacing-third-large: 1rem;
+  --h5p-theme-spacing-fourth-large: 0.65rem;
+  --h5p-theme-spacing-fifth-large: 0.5rem;
+  --h5p-theme-font-size-xxl-large: 1.5rem;
+  --h5p-theme-font-size-xl-large: 1.25rem;
+  --h5p-theme-font-size-l-large: 1.125rem;
+  --h5p-theme-font-size-m-large: 1rem;
+  --h5p-theme-font-size-s-large: 0.85rem;
+
+  container-name: theme-picker;
+  container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+  gap: 2rem;
+
+  .h5p-theme-picker-details {
+    display: grid;
+    gap: 1rem;
+
+    &:not(.open) {
+      grid-template-columns: 1fr;
+    }
+
+    &.open {
+      grid-template-columns: minmax(0, 320px) 1fr;
+    }
+  }
+}
+
+@container theme-picker (width < 640px) {
+  .h5p-theme-picker .h5p-theme-picker-details {
+    grid-template-columns: 1fr;
+  }
+}

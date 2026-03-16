@@ -1,0 +1,45 @@
+.h5p-theme-picker-color-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  .sp-container.hue .sp-picker-container {
+    width: 1rem;
+    height: 183px;
+
+    .sp-top {
+      height: calc(100% - 10px);
+
+      .sp-top-inner {
+        .sp-color {
+          display: none;
+        }
+
+        .sp-hue {
+          right: auto;
+        }
+      }
+    }
+  }
+
+  .h5p-theme-picker-color-selector-title {
+    font-weight: 700;
+  }
+
+  .h5p-theme-picker-color-selector-grid {
+    display: grid;
+    font-size: .875rem;
+    font-weight: 700;
+    gap: 1rem;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+
+    .h5p-theme-picker-color-selector-label {
+      width: fit-content;
+    }
+  }
+
+  &.display-none {
+    display: none;
+  }
+}
