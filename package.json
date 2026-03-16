@@ -1,6 +1,6 @@
 {
   "name": "h5p-theme-picker",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Web component for setting theme for H5P",
   "scripts": {
     "lint": "stylelint './src/**/*.css' && eslint './src/**/*.js'",
