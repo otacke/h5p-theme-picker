@@ -11,11 +11,8 @@
       font-weight: 700;
     }
 
-    /* Overly explicit to fight CSS spill */
-    .h5p-theme-picker-select,
-    .h5p-theme-picker-select:active,
-    .h5p-theme-picker-select:hover,
-    .h5p-theme-picker-select:focus {
+    /* Overly explicit for this select element to fight potential CSS spill */
+    .h5p-theme-picker-select {
       appearance: base-select;
       background: #ffffff;
       background-size: auto;
@@ -30,6 +27,12 @@
       min-height: auto;
       max-width: none;
       padding: .85rem 1rem;
+
+      &:active, &:hover, &:focus {
+        border-color: #d0d0d1;
+        color: #636b6f;
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 0px 5px 0px inset;
+      }
 
       &::picker(select) {
         appearance: base-select;
