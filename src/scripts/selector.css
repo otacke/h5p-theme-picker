@@ -11,15 +11,24 @@
       font-weight: 700;
     }
 
-    .h5p-theme-picker-select {
+    /* Overly explicit to fight CSS spill */
+    .h5p-theme-picker-select,
+    .h5p-theme-picker-select:active,
+    .h5p-theme-picker-select:hover,
+    .h5p-theme-picker-select:focus {
       appearance: base-select;
-      background-color: #ffffff;
+      background: #ffffff;
+      background-size: auto;
       border: 1px solid #d0d0d1;
       border-radius: 0;
       box-shadow: rgba(0, 0, 0, 0.12) 0px 0px 5px 0px inset;
       box-sizing: border-box;
       color: #636b6f;
+      cursor: pointer;
       font-size: .875rem;
+      line-height: normal;
+      min-height: auto;
+      max-width: none;
       padding: .85rem 1rem;
 
       &::picker(select) {
