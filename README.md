@@ -38,9 +38,9 @@ import 'h5p-theme-picker';
 | custom-color-background  | Hexadecimal color for background. Used if `theme-name` is `custom`.              | recommended |
 | language                 | ISO 639 language code to specify the requested language to use.                  | recommended |
 | translations             | Stringified JSON object with translation to use. [See details](#translations).   | optional    |
-| preset-themes-allowed    | Determine whether inbuilt presets are shown: [`true`|`false`] (default: `true`). | optional    |
-| custom-themes-allowed    | Determine whether custom themes can be set: [`true`|`false`] (default: `true`).  | optional    |
-| density-allowed          | Determine whether the density can be set: [`true`|`false`] (default: `true`).    | optional    |
+| preset-themes-allowed    | Determine whether inbuilt presets are shown: [`true`\|`false`] (default: `true`). | optional    |
+| custom-themes-allowed    | Determine whether custom themes can be set: [`true`\|`false`] (default: `true`).  | optional    |
+| density-allowed          | Determine whether the density can be set: [`true`\|`false`] (default: `true`).    | optional    |
 | custom-presets           | Stringified JSON object with custom preset. [See details](#custom-presets).      | optional    |
 
 If you don't use HTML (or other markup interpreters like JSX) but construct the DOM element, you can pass the attributes to the constructor, but they are expected to be in _camelcase_, e.g.
