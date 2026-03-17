@@ -39,7 +39,9 @@
   --h5p-theme-picker-color-background: hsl(0, 100%, 100%);
   --h5p-theme-picker-color-text: hsl(200, 5%, 40%);
   --h5p-theme-picker-color-stroke: hsl(225, 25%, 90%);
-  --h5p-theme-picker-color-stroke-diff10l: hsl(from var(--h5p-theme-picker-color-stroke) h s calc(l + sign(50 - l) * 10));
+  /* not supported by postcss yet */
+  /* --h5p-theme-picker-color-stroke-diff10l: hsl(from var(--h5p-theme-picker-color-stroke) h s calc(l + sign(50 - l) * 10)); */
+  --h5p-theme-picker-color-stroke-diff10l: color-mix(in hsl, var(--h5p-theme-picker-color-stroke) 90%, black);
 
   background: var(--h5p-theme-picker-color-background);
   container-name: theme-picker;
