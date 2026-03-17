@@ -2,6 +2,10 @@
   "name": "h5p-theme-picker",
   "version": "0.0.4",
   "description": "Web component for setting theme for H5P",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/otacke/h5p-theme-picker.git"
+  },
   "scripts": {
     "lint": "stylelint './src/**/*.css' && eslint './src/**/*.js'",
     "build": "webpack --mode=production",
