@@ -1,7 +1,7 @@
 .h5p-theme-picker-color-picker {
   .h5p-theme-picker-color-picker-button {
     background-color: #fff;
-    border: 1px solid #e7e6ec;
+    border: 1px solid var(--h5p-theme-picker-color-stroke);
     border-radius: 2px;
     aspect-ratio: 1;
     cursor: pointer;
@@ -10,20 +10,20 @@
 
     .h5p-theme-picker-color-picker-preview {
       aspect-ratio: 1;
-      border: 1px solid #d0ced9;
+      border: 1px solid var(--h5p-theme-picker-color-stroke);
       border-radius: 2px;
       box-sizing: border-box;
       height: 100%;
       transition: background-color 0.2s;
     }
+  }
 
-    &:hover {
-      border-color: oklch(82.744% 0.00821 293.623);
-    }
+  &:hover .h5p-theme-picker-color-picker-button {
+    border-color: var(--h5p-theme-picker-color-stroke-diff10l);
   }
 
   .h5p-theme-picker-color-picker-popover {
-    border: 1px solid #e7e6ec;
+    border: 1px solid var(--h5p-theme-picker-color-stroke);
     inset: auto;
     padding: 0.5rem;
     position: absolute;
@@ -41,7 +41,7 @@
         -webkit-appearance: none;
         appearance: none;
         background: #ffffff;
-        border: 1px solid #d0ced9;
+        border: 1px solid var(--h5p-theme-picker-color-stroke);
         border-radius: 2px;
         box-shadow: 0 0 3px hsla(0, 0%, 0%, 0.2);
         cursor: pointer;

@@ -6,7 +6,7 @@
   gap: 0.5rem;
 
   .h5p-theme-picker-preview-label {
-    color: #636b6f;
+    color: var(--h5p-theme-picker-color-text);
     font-size: .875rem;
     font-weight: 700;
 
@@ -28,7 +28,7 @@
     --zoom-divider: 300px;
     --zoom-factor: clamp(var(--zoom-min), calc(100cqw / var(--zoom-divider)), var(--zoom-max));
 
-    border: 1px solid #dee1eb;
+    border: 1px solid var(--h5p-theme-picker-color-stroke);
     display: flex;
     flex-direction: column;
     max-width: calc(var(--zoom-max) * var(--zoom-divider));

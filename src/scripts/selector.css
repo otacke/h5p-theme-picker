@@ -6,7 +6,7 @@
     width: max-content;
 
     .h5p-theme-picker-label {
-      color: #636b6f;
+      color: var(--h5p-theme-picker-color-text);
       font-size: .875rem;
       font-weight: 700;
     }
@@ -16,11 +16,11 @@
       appearance: base-select;
       background: #ffffff;
       background-size: auto;
-      border: 1px solid #d0d0d1;
+      border: 1px solid var(--h5p-theme-picker-color-stroke);
       border-radius: 0;
       box-shadow: rgba(0, 0, 0, 0.12) 0px 0px 5px 0px inset;
       box-sizing: border-box;
-      color: #636b6f;
+      color: var(--h5p-theme-picker-color-text);
       cursor: pointer;
       font-size: .875rem;
       line-height: normal;
@@ -29,8 +29,8 @@
       padding: .85rem 1rem;
 
       &:active, &:hover, &:focus {
-        border-color: #d0d0d1;
-        color: #636b6f;
+        border-color: var(--h5p-theme-picker-color-stroke);
+        color: var(--h5p-theme-picker-color-text);
         box-shadow: rgba(0, 0, 0, 0.12) 0px 0px 5px 0px inset;
       }
 

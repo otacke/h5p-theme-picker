@@ -23,6 +23,7 @@
   }
 
   .h5p-theme-picker-color-selector-title {
+    color: var(--h5p-theme-picker-color-text);
     font-weight: 700;
   }
 
