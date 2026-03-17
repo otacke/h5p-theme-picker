@@ -5,7 +5,7 @@ A custom element for selecting an H5P-style theme and density. H5P.com has one, 
 ## Basic usage
 Add h5p-theme-picker as a dependency to your project (with npm)
 ```bash
-npm install https://githubcom/otacke/h5p-themer.git@latest
+npm install h5p-theme-picker
 ```
 Note that I have not yet put this up on `npmjs.org` and that I am not sure if I will. So, receiving updates will require you to repeat that install process manually.
 
