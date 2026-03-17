@@ -315,3 +315,9 @@ Alternatively, you could load extra JavaScript to the H5P iframe that sets `H5PI
 If that is tricky or as a fallback, you could achieve the same by selecting the `.h5p-content` element after the content was initialized and set/remove the additional `h5p-large` or `h5p-medium` or `h5p-small` class as required. Keep in mind that you need to resize the instance afterwards to avoid visual glitches. That may be visible, so you might also want to hide the content until that resize is done.
 
 For loading that extra JavaScript, ensure to load it into the H5P iframe context. If you are working on an H5P integration that supports H5P's hooks, you can [use the `alter_styles` hook](https://h5p.org/documentation/for-developers/visual-changes) to load the CSS file.
+
+## Known issues
+### Does not use shadow DOM (yet)
+I'd have loved to use the shadow DOM, but that broke CSS anchor positioning that I use for aligning the hue picker when choosing custom colors. And I didn't have the energy to find a workaround (and I'd not want to create the logic JavaScript, hey it's in CSS now and it's great!).
+- Consequence: CSS may spill over from the host, and it in fact did for a common WordPress theme. If you integrate the theme picker, make sure to check whether there are some overly general selectors like `select` that cause trouble.
+- Consequence 2: I did not have to come up with a way to override the style declarations in case you don't like them :-)
