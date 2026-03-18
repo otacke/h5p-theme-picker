@@ -209,3 +209,25 @@
     }
   }
 }
+
+/* Firefox does not support cqw but pretends is does. */
+@supports ((-moz-appearance: none) or (not (width: 1cqw))) {
+  @container h5p-theme-picker-preview (width < 300px) {
+    .h5p-theme-picker-preview .h5p-theme-picker-preview-mockup { --zoom-factor: 0.5; }
+  }
+  @container h5p-theme-picker-preview (width >= 300px) {
+    .h5p-theme-picker-preview .h5p-theme-picker-preview-mockup { --zoom-factor: 1; }
+  }
+  @container h5p-theme-picker-preview (width >= 450px) {
+    .h5p-theme-picker-preview .h5p-theme-picker-preview-mockup { --zoom-factor: 1.5; }
+  }
+  @container h5p-theme-picker-preview (width >= 600px) {
+    .h5p-theme-picker-preview .h5p-theme-picker-preview-mockup { --zoom-factor: 2; }
+  }
+  @container h5p-theme-picker-preview (width >= 750px) {
+    .h5p-theme-picker-preview .h5p-theme-picker-preview-mockup { --zoom-factor: 2.5; }
+  }
+  @container h5p-theme-picker-preview (width >= 900px) {
+    .h5p-theme-picker-preview .h5p-theme-picker-preview-mockup { --zoom-factor: 3; }
+  }
+}
