@@ -15,7 +15,7 @@ const FALLBACK_DENSITY = 'large';
  */
 const buildDOM = (params) => {
   const dom = document.createElement('div');
-  dom.classList.add('h5p-theme-picker-selector');
+  dom.classList.add('h5p-theme-picker-selector-box');
 
   const suffix = crypto.randomUUID();
   const themeId = `selectTheme-${suffix}`;
