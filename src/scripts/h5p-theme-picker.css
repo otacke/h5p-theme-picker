@@ -67,7 +67,7 @@
 }
 
 @container theme-picker (width < 640px) {
-  .h5p-theme-picker .h5p-theme-picker-details {
+  .h5p-theme-picker .h5p-theme-picker-details.open {
     grid-template-columns: 1fr;
   }
 }
