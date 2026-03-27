@@ -91,3 +91,9 @@
     }
   }
 }
+
+@container theme-picker (width <= 320px) {
+  .h5p-theme-picker-selector-box {
+    grid-template-columns: auto;
+  }
+}
