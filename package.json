@@ -1,6 +1,6 @@
 {
   "name": "h5p-theme-picker",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Web component for setting theme for H5P",
   "repository": {
     "type": "git",
