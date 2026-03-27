@@ -189,7 +189,7 @@ export default class ColorPicker extends HTMLElement {
       button.addEventListener('click', this.handleButtonClick);
     }
     else if (params.type === 'hue') {
-      button.setAttribute('popovertarget', params.uuid);
+      button.setAttribute('popovertarget', `popover-${params.uuid}`);
     }
 
     dom.append(button);
@@ -201,12 +201,13 @@ export default class ColorPicker extends HTMLElement {
 
     if (params.type === 'hue') {
       popover = document.createElement('dialog');
-      popover.id = params.uuid;
+      popover.id = `popover-${params.uuid}`;
       popover.setAttribute('popover', '');
       popover.classList.add('h5p-theme-picker-color-picker-popover');
       dom.append(popover);
 
       const sliderHue = document.createElement('input');
+      sliderHue.id = params.uuid;
       sliderHue.classList.add('h5p-theme-picker-color-picker-slider', 'hue');
       sliderHue.type = 'range';
       sliderHue.min = 0;
