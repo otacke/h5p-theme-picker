@@ -38,7 +38,7 @@ export default class ColorSelector extends HTMLElement {
 
     this.pickerButtons.navigation = this.addPicker('navigation', {
       defaultColor: params.customColorNavigation,
-      buttonLabel: this.translate('color_selector_buttons_navigation_aria'),
+      buttonLabel: this.translate('color_selector_navigation_button_aria'),
     }, 'color_selector_navigation_label');
 
     this.pickerButtons.alternative = this.addPicker('alternative', {
