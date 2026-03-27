@@ -16,6 +16,7 @@ export default class ColorPicker extends HTMLElement {
    * @class
    * @param {object} params Parameters.
    * @param {string} params.id Unique identifier for color picker instance.
+   * @param {string} [params.uuid] Unique identifier for color picker instance.
    * @param {string} [params.defaultColor] Initial color value for preview.
    * @param {string} [params.buttonLabel] Accessible label for color picker button.
    * @param {string} [params.type] Type of color picker ('color' or 'hue').
@@ -172,7 +173,7 @@ export default class ColorPicker extends HTMLElement {
     if (params.type === 'color') {
       input = document.createElement('input');
       input.type = 'color';
-      input.id = `color-picker-${params.id}`;
+      input.id = params.uuid;
       input.classList.add('h5p-theme-picker-color-picker-input');
       input.setAttribute('tabindex', '-1');
       input.value = params.defaultColor;
@@ -188,7 +189,7 @@ export default class ColorPicker extends HTMLElement {
       button.addEventListener('click', this.handleButtonClick);
     }
     else if (params.type === 'hue') {
-      button.setAttribute('popovertarget', `color-picker-${params.id}`);
+      button.setAttribute('popovertarget', params.uuid);
     }
 
     dom.append(button);
@@ -200,7 +201,7 @@ export default class ColorPicker extends HTMLElement {
 
     if (params.type === 'hue') {
       popover = document.createElement('dialog');
-      popover.id = `color-picker-${params.id}`;
+      popover.id = params.uuid;
       popover.setAttribute('popover', '');
       popover.classList.add('h5p-theme-picker-color-picker-popover');
       dom.append(popover);

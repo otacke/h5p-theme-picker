@@ -74,14 +74,17 @@ export default class ColorSelector extends HTMLElement {
    * @returns {ColorPicker} Created color picker instance.
    */
   addPicker(id, pickerParams, labelKey) {
+    const uuid = crypto.randomUUID();
+
     const picker = new ColorPicker(
-      { id, ...pickerParams },
+      { id, uuid, ...pickerParams },
       { onChange: (data) => emitInternal(this, 'change', data) },
     );
     this.grid.append(picker);
 
-    const label = document.createElement('div');
+    const label = document.createElement('label');
     label.classList.add('h5p-theme-picker-color-selector-picker-label');
+    label.setAttribute('for', uuid);
     label.innerText = this.translate(labelKey);
     this.grid.append(label);
 
