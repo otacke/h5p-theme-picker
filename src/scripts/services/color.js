@@ -153,7 +153,7 @@ const buildSecondaryCtaColors = (navigation, contrastCtaWhite) => ({
   '--h5p-theme-secondary-cta-light': changeLightnessByFactor(navigation, 1.1), // WRONGLY DOCUMENTED BY H5P GROUP
   // eslint-disable-next-line no-magic-numbers
   '--h5p-theme-secondary-cta-dark': changeLightnessByFactor(navigation, 0.9), // WRONGLY DOCUMENTED BY H5P GROUP
-  '--h5p-theme-secondary-contrast-cta': adjustLightnessForContrast(navigation, navigation, { lightenOnly: true }),
+  '--h5p-theme-secondary-contrast-cta': adjustLightnessForContrast(navigation, navigation), // WRONGLY DOCUMENTED, TOO
   '--h5p-theme-secondary-contrast-cta-hover': adjustLightnessForContrast(navigation, contrastCtaWhite),
 });
 
@@ -238,24 +238,17 @@ const srgbToLinear = (c) => (
  * @param {string} hexColor2 Hexadecimal color string of the contrast color to compare against.
  * @param {object} options Options for adjustment.
  * @param {number} [options.targetContrast] Target contrast ratio to achieve.
- * @param {boolean} [options.lightenOnly] Whether to only adjust towards lighter color.
  * @param {number} [options.lightnessAdjustmentStep] Step to increase/decrease lightness by in each iteration.
  * @returns {string} Hexadecimal color string of the adjusted color that meets the target contrast ratio.
  */
 export const adjustLightnessForContrast = (hexColor1, hexColor2, options = {}) => {
   const targetContrast = options.targetContrast ?? DEFAULT_TARGET_CONTRAST_RATIO;
-  const lightenOnly = options.lightenOnly ?? false;
   const lightnessAdjustmentStep = options.lightnessAdjustmentStep || DEFAULT_LIGHTNESS_ADJUSTMENT_STEP;
 
   const color1 = Color(hexColor1);
   const color2 = Color(hexColor2);
 
   const lighter = adjustTowardContrast(color1, color2, targetContrast, lightnessAdjustmentStep, 1);
-
-  if (lightenOnly) {
-    return lighter.color.hex();
-  }
-
   const darker = adjustTowardContrast(color1, color2, targetContrast, lightnessAdjustmentStep, -1);
 
   return (darker.contrast > lighter.contrast) ? darker.color.hex() : lighter.color.hex();
