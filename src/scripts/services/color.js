@@ -89,13 +89,13 @@ const FIXED_THEME_COLORS = {
  * @param {number} targetContrast Target contrast ratio to achieve.
  * @param {number} lightnessAdjustmentStep Step to increase/decrease lightness by in each iteration.
  * @param {number} direction Direction to adjust lightness (1 for lighter, -1 for darker).
- * @returns {object} Object containing the adjusted color and the final contrast delta from target.
+ * @returns {object} Object containing the adjusted color and the final contrast from target.
  */
 const adjustTowardContrast = (baseColor, contrastColor, targetContrast, lightnessAdjustmentStep, direction) => {
   let counter = FAILSAFE_COUNTER_LIMIT;
   let adjustedColor = baseColor;
   let contrastDelta = Number.POSITIVE_INFINITY;
-
+  let contrast = adjustedColor.contrast(contrastColor);
   while (counter > 0) {
     const newLightness = adjustedColor.lightness() + direction * lightnessAdjustmentStep;
     if (newLightness < 0 || newLightness > 100) {
@@ -114,7 +114,9 @@ const adjustTowardContrast = (baseColor, contrastColor, targetContrast, lightnes
     counter--;
   }
 
-  return { color: adjustedColor, delta: contrastDelta };
+  contrast = adjustedColor.contrast(contrastColor);
+
+  return { color: adjustedColor, contrast: contrast };
 };
 
 /**
@@ -256,7 +258,7 @@ export const adjustLightnessForContrast = (hexColor1, hexColor2, options = {}) =
 
   const darker = adjustTowardContrast(color1, color2, targetContrast, lightnessAdjustmentStep, -1);
 
-  return (darker.delta < lighter.delta) ? darker.color.hex() : lighter.color.hex();
+  return (darker.contrast > lighter.contrast) ? darker.color.hex() : lighter.color.hex();
 };
 
 /**
