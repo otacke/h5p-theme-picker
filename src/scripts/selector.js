@@ -1,4 +1,4 @@
-import { emitInternal } from '@services/util.js';
+import { createUUID, emitInternal } from '@services/util.js';
 import './selector.css';
 
 /**
@@ -17,7 +17,7 @@ const buildDOM = (params) => {
   const dom = document.createElement('div');
   dom.classList.add('h5p-theme-picker-selector');
 
-  const suffix = crypto.randomUUID();
+  const suffix = createUUID();
   const themeId = `selectTheme-${suffix}`;
   const densityId = `selectDensity-${suffix}`;
 
