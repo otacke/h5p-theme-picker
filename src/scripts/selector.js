@@ -15,7 +15,7 @@ const FALLBACK_DENSITY = 'large';
  */
 const buildDOM = (params) => {
   const dom = document.createElement('div');
-  dom.classList.add('h5p-theme-picker-selector');
+  dom.classList.add('h5p-theme-picker-selector-box');
 
   const suffix = createUUID();
   const themeId = `selectTheme-${suffix}`;
@@ -24,7 +24,7 @@ const buildDOM = (params) => {
   const labelTheme = document.createElement('label');
   labelTheme.classList.add('h5p-theme-picker-label');
   labelTheme.setAttribute('for', themeId);
-  labelTheme.innerText = params.translations.get('selector_theme_label') ?? params.labelTheme;
+  labelTheme.innerText = params.labelTheme;
   dom.append(labelTheme);
 
   const selectTheme = document.createElement('select');
@@ -39,7 +39,7 @@ const buildDOM = (params) => {
   const labelDensity = document.createElement('label');
   labelDensity.classList.add('h5p-theme-picker-label');
   labelDensity.setAttribute('for', densityId);
-  labelDensity.innerText = params.translations.get('selector_density_label') ?? params.labelDensity;
+  labelDensity.innerText = params.labelDensity;
   dom.append(labelDensity);
 
   const selectDensity = document.createElement('select');
@@ -54,14 +54,16 @@ export default class Selector extends HTMLElement {
   /**
    * @class
    * @param {object} params Parameters.
-   * @param {string} params.labelTheme Theme label.
-   * @param {string} params.labelDensity Density label.
+   * @param {object} params.translations Translations.
+   * @param {boolean} params.densityAllowed Whether density selection is allowed.
    */
   constructor(params = {}) {
     super();
 
-    params.labelTheme = params.labelTheme ?? this.getAttribute('label-theme') ?? 'Theme';
-    params.labelDensity = params.labelDensity ?? this.getAttribute('label-density') ?? 'Density';
+    params.labelTheme = params.translations?.get('selector_theme_label') ??
+      this.getAttribute('label-theme') ?? 'Theme';
+    params.labelDensity = params.translations?.get('selector_density_label') ??
+      this.getAttribute('label-density') ?? 'Density';
     params.densityAllowed = params.densityAllowed ??
       (this.hasAttribute('density-allowed') ? this.getAttribute('density-allowed') === 'true' : true);
 

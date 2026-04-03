@@ -1,93 +1,99 @@
-  .h5p-theme-picker-selector {
-    align-items: center;
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 1rem;
-    width: max-content;
+.h5p-theme-picker-selector-box {
+  align-items: center;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  width: max-content;
 
-    .h5p-theme-picker-label {
+  .h5p-theme-picker-label {
+    color: var(--h5p-theme-picker-color-text);
+    font-size: .875rem;
+    font-weight: 700;
+  }
+
+  /* Overly explicit for this select element to fight potential CSS spill */
+  .h5p-theme-picker-select {
+    appearance: base-select;
+    background: #ffffff;
+    background-size: auto;
+    border: 1px solid var(--h5p-theme-picker-color-stroke);
+    border-radius: 0;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 0px 5px 0px inset;
+    box-sizing: border-box;
+    color: var(--h5p-theme-picker-color-text);
+    cursor: pointer;
+    font-size: .875rem;
+    line-height: normal;
+    min-height: auto;
+    max-width: none;
+    padding: .85rem 1rem;
+
+    &:active, &:hover, &:focus {
+      border-color: var(--h5p-theme-picker-color-stroke);
       color: var(--h5p-theme-picker-color-text);
-      font-size: .875rem;
-      font-weight: 700;
+      box-shadow: rgba(0, 0, 0, 0.12) 0px 0px 5px 0px inset;
     }
 
-    /* Overly explicit for this select element to fight potential CSS spill */
-    .h5p-theme-picker-select {
+    &::picker(select) {
       appearance: base-select;
-      background: #ffffff;
-      background-size: auto;
-      border: 1px solid var(--h5p-theme-picker-color-stroke);
-      border-radius: 0;
+    }
+
+    &::picker-icon {
+      display: none;
+    }
+
+    &:open::picker(select) {
+      border: 1px solid #d0d0d1;
+      border-top: none;
       box-shadow: rgba(0, 0, 0, 0.12) 0px 0px 5px 0px inset;
-      box-sizing: border-box;
-      color: var(--h5p-theme-picker-color-text);
-      cursor: pointer;
-      font-size: .875rem;
-      line-height: normal;
-      min-height: auto;
-      max-width: none;
-      padding: .85rem 1rem;
+    }
 
-      &:active, &:hover, &:focus {
-        border-color: var(--h5p-theme-picker-color-stroke);
-        color: var(--h5p-theme-picker-color-text);
-        box-shadow: rgba(0, 0, 0, 0.12) 0px 0px 5px 0px inset;
+    option {
+      background-color: var(--background-color, #ffffff);
+      color: #636b6f;
+      height: 3rem;
+      margin: 2px;
+      padding: 0.25rem;
+      transition: box-shadow 0.1s ease-in-out;
+      white-space: nowrap;
+
+      &:checked {
+        box-shadow: 0 0 0 2px #000000, inset 0 0 0 2px #000000;
       }
 
-      &::picker(select) {
-        appearance: base-select;
+      &:hover {
+        box-shadow: 0 0 0 2px #000000, inset 0 0 0 2px #000000;
       }
 
-      &::picker-icon {
+      &::checkmark {
         display: none;
       }
+    }
 
-      &:open::picker(select) {
-        border: 1px solid #d0d0d1;
-        border-top: none;
-        box-shadow: rgba(0, 0, 0, 0.12) 0px 0px 5px 0px inset;
-      }
-
+    &.theme {
       option {
-        background-color: var(--background-color, #ffffff);
-        color: #636b6f;
-        height: 3rem;
-        margin: 2px;
-        padding: 0.25rem;
-        transition: box-shadow 0.1s ease-in-out;
-        white-space: nowrap;
+        font-weight: 600;
 
-        &:checked {
-          box-shadow: 0 0 0 2px #000000, inset 0 0 0 2px #000000;
-        }
-
-        &:hover {
-          box-shadow: 0 0 0 2px #000000, inset 0 0 0 2px #000000;
-        }
-
-        &::checkmark {
-          display: none;
-        }
-      }
-
-      &.theme {
-        option {
-          font-weight: 600;
-
-          &::after {
-            display: inline-grid;
-            aspect-ratio: 1.5;
-            background-color: var(--color, #000000);
-            border-radius: 1rem;
-            color: var(--background-color, #ffffff);
-            content: '\2013';
-            font-weight: 700;
-            height: 1.25rem;
-            line-height: 1;
-            margin-left: auto;
-            place-items: center;
-          }
+        &::after {
+          display: inline-grid;
+          aspect-ratio: 1.5;
+          background-color: var(--color, #000000);
+          border-radius: 1rem;
+          color: var(--background-color, #ffffff);
+          content: '\2013';
+          font-weight: 700;
+          height: 1.25rem;
+          line-height: 1;
+          margin-left: auto;
+          place-items: center;
         }
       }
     }
   }
+}
+
+@container theme-picker (width <= 320px) {
+  .h5p-theme-picker-selector-box {
+    grid-template-columns: auto;
+  }
+}

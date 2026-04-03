@@ -93,6 +93,7 @@ export default class Translations {
    */
   get(key) {
     if (typeof key !== 'string' || !this.has(key)) {
+      console.warn(`Translation key "${key}" is missing or invalid.`);
       return `Missing translation for key: ${key}`;
     }
 
