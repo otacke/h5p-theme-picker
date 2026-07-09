@@ -146,7 +146,7 @@ The `custom-presets` attribute can be used to use the picker with custom presets
       "--h5p-theme-alternative-base": "#F1F5FB",
       "--h5p-theme-background": "#F9FBFF",
       "--h5p-theme-focus": "#006FBF",
-      "--h5p-theme-main-cta-light": "#007CD6",
+      "--h5p-theme-main-cta-light": "#0D74C0",
       "--h5p-theme-main-cta-dark": "#005FA3",
       "--h5p-theme-contrast-cta": "#EBF7FF",
       "--h5p-theme-contrast-cta-white": "#006FBF",
