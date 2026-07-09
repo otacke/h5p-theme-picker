@@ -106,12 +106,11 @@
         "--h5p-theme-feedback-neutral-main": "#E6C81D",
         "--h5p-theme-feedback-neutral-secondary": "#5E4817",
         "--h5p-theme-feedback-neutral-third": "#F0EBCB",
-        "--h5p-theme-main-cta-base": "#187571";
+        "--h5p-theme-main-cta-base": "#187571",
         "--h5p-theme-secondary-cta-base": "#000000",
         "--h5p-theme-alternative-base": "#FAF4E6",
         "--h5p-theme-background": "#FCF9F2",
         "--h5p-theme-focus": "#F1EBFA",
-        "--h5p-theme-main-cta-light": "#00B2A0",
         "--h5p-theme-main-cta-light": "#1C7E79",
         "--h5p-theme-main-cta-dark": "#004D45",
         "--h5p-theme-contrast-cta": "#ffffff",
