@@ -86,7 +86,7 @@ export default class ColorPicker extends HTMLElement {
    * Lifecycle method called when element is removed from the DOM. Cleans up event listeners.
    */
   disconnectedCallback() {
-    cleanupListeners();
+    this.cleanupListeners();
   }
 
   /**
