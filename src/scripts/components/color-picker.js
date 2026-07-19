@@ -1,4 +1,4 @@
-import { getAlternativeBaseFromHue, getAlternativeBaseDisplay } from '@services/color.js';
+import { getAlternativeBaseFromHue, getAlternativeBaseDisplay, getHue } from '@services/color.js';
 import './color-picker.css';
 
 // TODO: Could be fun to create a complete color picker instead of using native input.
@@ -212,7 +212,7 @@ export default class ColorPicker extends HTMLElement {
       sliderHue.type = 'range';
       sliderHue.min = 0;
       sliderHue.max = 360;
-      sliderHue.value = 0;
+      sliderHue.value = getHue(params.defaultColor);
       sliderHue.addEventListener('input', (event) => {
         const hue = parseFloat(event.target.value);
         const alternativeBase = getAlternativeBaseFromHue(hue);
