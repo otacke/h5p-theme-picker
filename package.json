@@ -37,12 +37,12 @@
     "css-loader": "^7.1.4",
     "cssnano": "^7.1.4",
     "eslint-config-snordian-h5p": "github:otacke/eslint-config-snordian-h5p",
-    "postcss": "^8.5.8",
+    "postcss": "^8.5.20",
     "postcss-loader": "^8.2.1",
     "style-loader": "^4.0.0",
-    "stylelint": "^17.6.0",
+    "stylelint": "^17.14.0",
     "stylelint-config-recommended": "^18.0.0",
-    "webpack": "^5.105.4",
-    "webpack-cli": "^7.0.2"
+    "webpack": "^5.108.4",
+    "webpack-cli": "^7.2.1"
   }
 }
