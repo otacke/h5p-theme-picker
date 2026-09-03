@@ -30,7 +30,7 @@
   ],
   "sideEffects": true,
   "dependencies": {
-    "@oddbird/css-anchor-positioning": "^0.10.1",
+    "@oddbird/css-anchor-positioning": "^0.10.2",
     "color": "^5.0.3"
   },
   "devDependencies": {
