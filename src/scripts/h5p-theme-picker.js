@@ -91,7 +91,7 @@ export default class ThemePicker extends HTMLElement {
     this.bindHandlers();
     this.isEventsBound = false;
 
-    this.initialize(params);
+    this.initialize(this.params);
   }
 
   /**
@@ -112,12 +112,18 @@ export default class ThemePicker extends HTMLElement {
     const selectedTheme = this.initColors();
     this.initDensity();
 
+    const options = this.selectorOptions.getThemeOptions();
+    const customOptions = options.get('custom');
     const built = buildDOM({
       translations: this.translations,
-      customColorButtons: this.selectedThemeColors['--h5p-theme-main-cta-base'],
-      customColorNavigation: this.selectedThemeColors['--h5p-theme-secondary-cta-base'],
-      customColorAlternative: this.selectedThemeColors['--h5p-theme-alternative-base'],
-      customColorBackground: this.selectedThemeColors['--h5p-theme-background'],
+      customColorButtons: customOptions?.values['--h5p-theme-main-cta-base'] ??
+        this.selectedThemeColors['--h5p-theme-main-cta-base'],
+      customColorNavigation: customOptions?.values['--h5p-theme-secondary-cta-base'] ??
+        this.selectedThemeColors['--h5p-theme-secondary-cta-base'],
+      customColorAlternative: customOptions?.values['--h5p-theme-alternative-base'] ??
+        this.selectedThemeColors['--h5p-theme-alternative-base'],
+      customColorBackground: customOptions?.values['--h5p-theme-background'] ??
+        this.selectedThemeColors['--h5p-theme-background'],
       densityAllowed: config.densityAllowed,
     });
 
